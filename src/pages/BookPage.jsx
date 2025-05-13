@@ -1,0 +1,5 @@
+function BookPage(){
+    return <h1>Coming soon!</h1>
+}
+
+export default BookPage;
