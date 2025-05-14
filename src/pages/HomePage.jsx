@@ -1,8 +1,27 @@
 import { doctors } from "../data/doctors";
 import { useState, useEffect } from 'react';
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 function Homepage(){
+
+    const {currentUser} = useAuth();
+
+    const navigate = useNavigate();
+
+    function handleBook() {
+        if(!currentUser)
+        {
+            navigate("/login");
+        }
+        else
+        {
+            navigate("/book");
+        }
+
+    }
+
     //Sets the state to use all the doctors available
     const [allDoctors, setAllDoctors] = useState(doctors);
 
@@ -32,6 +51,7 @@ function Homepage(){
         {filteredDoctors.map(doc => (
             <li key = {doc.id}>
                  <p><b>{doc.name}</b></p>
+                 <button onClick={() => handleBook()}>Book Appointment</button>
             </li>
         ))}
        </ul>
