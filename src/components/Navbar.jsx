@@ -7,7 +7,8 @@ function Navbar() {
       <div className = "nav-links">
 
       <Link to="/">Home</Link> | {""}
-      <Link to="/doctors">Doctors</Link> | {""}
+      <Link to="/login">Login</Link> | {""}
+      <Link to= "/register">Registration</Link> | {""}
       <Link to="/book">Book</Link> | {""}
       <Link to="/dashboard">Dashboard</Link> | {""}
       <Link to="/admin">Admin</Link> | {""}
